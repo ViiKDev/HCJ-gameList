@@ -5,12 +5,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display:swap">
     <title>Game List</title>
 </head>
 
 <body>
+    <div class="container">
+        <div>
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <button id="btnAdd">
+                <span class="material-symbols-outlined">
+                    add_circle
+                </span>
+            </button>
+            <button id="btnImportar">
+                <span class="material-symbols-outlined">
+                    file_upload
+                </span>
+            </button>
+            <button id="btnDownload">
+                <span class="material-symbols-outlined">
+                    download
+                </span>
+            </button>
+        </div>
+    </footer>
 
+    <!-- Modais -->
+
+    <div class="modal" data-modal="adicionar-jogo">
+        <button class="btn-fechar-modal">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </button>
+        <form>
+            <div class="frm-linha">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome">
+            </div>
+            <div class="frm-linha">
+                <label for="img">Foto</label>
+                <input type="text" id="img">
+            </div>
+            <div class="frm-linha">
+                <label for="preco">Preço</label>
+                <input type="number" step="0.50" id="preco">
+            </div>
+            <div class="frm-linha">
+                <button id="btnSalvar">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal" data-modal="upload-jogos">
+        <button class="btn-fechar-modal">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </button>
+        <form>
+            <div class="frm-linha">
+                <label for="arquivo">Selecione o arquivo</label>
+                <input type="file" style="display:none;" id="arquivo">
+            </div>
+        </form>
+    </div>
+
+    <div class="modal" data-modal="download-jogos">
+        <button class="btn-fechar-modal">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </button>
+        <form>
+            <div class="frm-linha">
+                <label for="nomeArquivo">Nome do arquivo</label>
+                <input type="text" id="nomeArquivo">
+            </div>
+            <div class="frm-linha">
+                <button id="btnFazerDownload">Download</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="background-modal"></div>
 </body>
+<script src="js/app.js"></script>
 
 </html>
